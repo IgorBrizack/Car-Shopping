@@ -40,9 +40,13 @@ class CarsController {
   }
 
   public async getCarById(id: string) {
-    await this.service.idVerify(id);
-    const car = await this.service.getCarId(id);
-    return this.res.status(200).json(car);
+    try {
+      await this.service.idVerify(id);
+      const car = await this.service.getCarId(id);
+      return this.res.status(200).json(car);
+    } catch (error) {
+      this.next(error);
+    }
   }
 }
 

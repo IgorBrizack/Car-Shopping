@@ -36,7 +36,7 @@ abstract class AbstractODM<T> {
     return this.model.find();
   }
 
-  public async isValidId(id: string): Promise<boolean> {
+  public async isValidId(id:string): Promise<boolean> {
     return isValidObjectId(id);
   }
 }

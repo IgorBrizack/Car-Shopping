@@ -38,6 +38,7 @@ class CarsService {
   public async idVerify(id: string) {
     const carODM = new CarODM();
     const isValid = await carODM.isValidId(id);
+    
     if (!isValid) throw new ErrorWithStatus('Invalid mongo id', 422);
   }
 }

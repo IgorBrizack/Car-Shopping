@@ -1,15 +1,10 @@
-import { NextFunction, Request, Response } from 'express';
+import { ErrorRequestHandler } from 'express';
 
-class ErrorHandler {
-  public static handle(
-    error: Error,
-    _req: Request,
-    res: Response,
-    next: NextFunction,
-  ) {
-    res.status(500).json({ message: error.message });
-    next();
+const error: ErrorRequestHandler = (err, _req, res, _next) => {
+  if (err.statusCode) {
+    return res.status(err.statusCode).json({ message: err.message });
   }
-}
+  return res.status(500).json({ message: `Internal server error: ${err.message}` });
+};
 
-export default ErrorHandler;
+export default error;

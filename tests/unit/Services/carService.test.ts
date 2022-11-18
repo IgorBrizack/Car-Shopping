@@ -134,7 +134,7 @@ describe('Testando a rota de Cars', () => {
     };
 
     sinon.stub(Model, 'findById').resolves(carOutput);
-    sinon.stub(Model, 'findOneAndUpdate').resolves();
+    sinon.stub(Model, 'findByIdAndUpdate').resolves(carUpdated);
 
     const service = new CarService();
     const result = await service.updateCar(id, carUpdate);

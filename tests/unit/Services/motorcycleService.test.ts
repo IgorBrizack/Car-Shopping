@@ -21,7 +21,7 @@ describe('Testando a rota de Motorcycles', () => {
     sinon.stub(Model, 'create').resolves(motorcycleOutput);
     
     const service = new MotorcycleService();
-    const result = await service.insertNewMotocycle({ 
+    const result = await service.insertNewMotorcycle({ 
       model: 'Honda Cb 600f Hornet',
       year: 2005,
       color: 'Yellow',

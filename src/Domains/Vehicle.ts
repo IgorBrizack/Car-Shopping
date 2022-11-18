@@ -1,38 +1,25 @@
-import ICar from '../Interfaces/ICar';
-import Vehicle from './Vehicle';
-
-class Car extends Vehicle {
-  // protected id: string | undefined;
-  // protected model: string;
-  // protected year: number;
-  // protected color: string;
-  // protected status: boolean;
-  // protected buyValue: number;
-  private doorsQty: number;
-  private seatsQty: number;
+class Vehicle {
+  protected id: string | undefined;
+  protected model: string;
+  protected year: number;
+  protected color: string;
+  protected status: boolean;
+  protected buyValue: number;
 
   constructor(
-    {
-      id,
-      model,
-      year,
-      color,
-      buyValue,
-      doorsQty,
-      seatsQty,
-      status,
-    }:ICar,
+    id: string | undefined,
+    model: string,
+    year: number,
+    color: string,
+    buyValue: number,
+    status: boolean,
   ) {
-    super(
-      id,
-      model,
-      year,
-      color,
-      buyValue,
-      status || false,
-    );
-    this.doorsQty = doorsQty;
-    this.seatsQty = seatsQty;
+    this.id = id;
+    this.model = model;
+    this.year = year;
+    this.color = color;
+    this.buyValue = buyValue;
+    this.status = status || false;
   }
 
   // public setId(id: string) {
@@ -100,4 +87,4 @@ class Car extends Vehicle {
   // }
 }
 
-export default Car;
+export default Vehicle;

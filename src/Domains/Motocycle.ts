@@ -1,15 +1,15 @@
-import ICar from '../Interfaces/ICar';
+import IMotocyle from '../Interfaces/IMotocycle';
 import Vehicle from './Vehicle';
 
-class Car extends Vehicle {
+class Motocycle extends Vehicle {
   // protected id: string | undefined;
   // protected model: string;
   // protected year: number;
   // protected color: string;
   // protected status: boolean;
   // protected buyValue: number;
-  private doorsQty: number;
-  private seatsQty: number;
+  private category: string;
+  private engineCapacity: number;
 
   constructor(
     {
@@ -18,10 +18,10 @@ class Car extends Vehicle {
       year,
       color,
       buyValue,
-      doorsQty,
-      seatsQty,
+      category,
+      engineCapacity,
       status,
-    }:ICar,
+    }:IMotocyle,
   ) {
     super(
       id,
@@ -31,8 +31,8 @@ class Car extends Vehicle {
       buyValue,
       status || false,
     );
-    this.doorsQty = doorsQty;
-    this.seatsQty = seatsQty;
+    this.engineCapacity = engineCapacity;
+    this.category = category;
   }
 
   // public setId(id: string) {
@@ -100,4 +100,4 @@ class Car extends Vehicle {
   // }
 }
 
-export default Car;
+export default Motocycle;

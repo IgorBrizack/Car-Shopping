@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import CarsController from '../Controllers/CarsController';
+import MotocycleController from '../Controllers/MotocycleController';
 
 const routes = Router();
 
@@ -21,6 +22,11 @@ routes.get(
 routes.put(
   '/cars/:id',
   (req, res, next) => new CarsController(req, res, next).updateCarById(req.params.id, req.body),
+);
+
+routes.post(
+  '/motocycles',
+  (req, res, next) => new MotocycleController(req, res, next).create(),
 );
 
 export default routes;

@@ -34,4 +34,8 @@ describe('Testando a rota de Motorcycles', () => {
 
     sinon.restore();
   });
+
+  // afterEach(function () {
+  //   sinon.restore();
+  // });
 });

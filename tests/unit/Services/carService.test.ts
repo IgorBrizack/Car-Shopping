@@ -3,6 +3,7 @@ import { describe } from 'mocha';
 import { Model } from 'mongoose';
 import sinon from 'sinon';
 import Car from '../../../src/Domains/Car';
+import ICar from '../../../src/Interfaces/ICar';
 import CarService from '../../../src/Services/CarsService';
 
 describe('Testando a rota de Cars', () => {
@@ -95,5 +96,53 @@ describe('Testando a rota de Cars', () => {
     } catch (error) {
       expect((error as Error).message).to.be.equal('Invalid mongo id');
     }
+  });
+
+  it('Deve ser possível atualizar um carro com sucesso', async function () {
+    const carOutput: Car = new Car({
+      id: '6376c07a3fe0c9fdb2d99ab8',
+      model: 'marea',
+      year: 2002,
+      color: 'Black',
+      status: true,
+      buyValue: 15.990,
+      doorsQty: 4,
+      seatsQty: 5,
+    });
+    
+    const id = '634852326b35b59438fbea2f';
+
+    const carUpdate: ICar = {
+      model: 'Marea',
+      year: 1992,
+      color: 'Red',
+      status: true,
+      buyValue: 12.000,
+      doorsQty: 2,
+      seatsQty: 5,
+    };
+
+    const carUpdated: ICar = {
+      id: '634852326b35b59438fbea2f',
+      model: 'Marea',
+      year: 1992,
+      color: 'Red',
+      status: true,
+      buyValue: 12.000,
+      doorsQty: 2,
+      seatsQty: 5,
+    };
+
+    sinon.stub(Model, 'findById').resolves(carOutput);
+    sinon.stub(Model, 'findOneAndUpdate').resolves();
+
+    const service = new CarService();
+    const result = await service.updateCar(id, carUpdate);
+
+    expect(result).to.be.deep.equal(carUpdated);
+  });
+
+  afterEach(function () {
+    sinon.restore();
   });
 });

@@ -7,7 +7,7 @@ import ICar from '../../../src/Interfaces/ICar';
 import CarService from '../../../src/Services/CarsService';
 
 describe('Testando a rota de Cars', () => {
-  it('cadastrando um novo carro com sucesso', async function () {
+  it('Cadastrando um novo carro com sucesso', async function () {
     const carOutput: Car = new Car({
       id: '6376c07a3fe0c9fdb2d99ab8',
       model: 'marea',
@@ -36,7 +36,7 @@ describe('Testando a rota de Cars', () => {
     sinon.restore();
   });
 
-  it('Verifique se é retornado um carro ao passar o Id', async function () {
+  it('Verifica se é retornado um carro ao passar o Id', async function () {
     const carOutput: Car = new Car({
       id: '6376c07a3fe0c9fdb2d99ab8',
       model: 'marea',

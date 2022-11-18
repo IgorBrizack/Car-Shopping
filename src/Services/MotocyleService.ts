@@ -39,6 +39,14 @@ class MotorcycleService {
 
     if (!isValid) throw new ErrorWithStatus('Invalid mongo id', 422);
   }
+
+  public async updateMotorcycle(id: string, data: IMotorcyle) {
+    await this.idVerify(id);
+    await this.getMotorcycleId(id);
+    const motorcycleODM = new MotorcycleODM();
+    const result = await motorcycleODM.update(id, data);
+    return this.createMotorcycleDomain(result);
+  }
 }
 
 export default MotorcycleService;

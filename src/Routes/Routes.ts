@@ -25,7 +25,7 @@ routes.put(
 );
 
 routes.post(
-  '/motocycles',
+  '/motorcycles',
   (req, res, next) => new MotorcycleController(req, res, next).create(),
 );
 

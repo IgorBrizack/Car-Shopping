@@ -13,10 +13,10 @@ class MotorcycleODM extends AbstractODM<IMotorcycle> {
       category: { type: String, required: true },
       engineCapacity: { type: Number, required: true },
     });
-    super(schema, 'Motocycle');
+    super(schema, 'Motorcycle');
   }
 
-  public async getMotocycle(id: string): Promise<IMotorcycle | null> {
+  public async getMotorcycle(id: string): Promise<IMotorcycle | null> {
     return this.model.findById(id);
   }
 }

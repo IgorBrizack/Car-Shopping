@@ -1,7 +1,7 @@
-import IMotocyle from '../Interfaces/IMotocycle';
+import IMotorcyle from '../Interfaces/IMotorcycle';
 import Vehicle from './Vehicle';
 
-class Motocycle extends Vehicle {
+class Motorcycle extends Vehicle {
   // protected id: string | undefined;
   // protected model: string;
   // protected year: number;
@@ -21,7 +21,7 @@ class Motocycle extends Vehicle {
       category,
       engineCapacity,
       status,
-    }:IMotocyle,
+    }:IMotorcyle,
   ) {
     super(
       id,
@@ -100,4 +100,4 @@ class Motocycle extends Vehicle {
   // }
 }
 
-export default Motocycle;
+export default Motorcycle;

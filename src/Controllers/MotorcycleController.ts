@@ -1,22 +1,22 @@
 import { NextFunction, Request, Response } from 'express';
-import IMotocyle from '../Interfaces/IMotocycle';
-import MotocycleService from '../Services/MotocyleService';
+import IMotorcyle from '../Interfaces/IMotorcycle';
+import MotorcycleService from '../Services/MotocyleService';
 
-class MotocycleController {
+class MotorcycleController {
   private req: Request;
   private res: Response;
   private next: NextFunction;
-  private service: MotocycleService;
+  private service: MotorcycleService;
 
   constructor(req: Request, res: Response, next: NextFunction) {
     this.req = req;
     this.res = res;
     this.next = next;
-    this.service = new MotocycleService();
+    this.service = new MotorcycleService();
   }
 
   public async create() {
-    const newMotocyle: IMotocyle = {
+    const newMotocyle: IMotorcyle = {
       model: this.req.body.model,
       year: this.req.body.year,
       color: this.req.body.color,
@@ -35,4 +35,4 @@ class MotocycleController {
   }
 }
 
-export default MotocycleController;
+export default MotorcycleController;

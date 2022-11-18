@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import CarsController from '../Controllers/CarsController';
-import MotocycleController from '../Controllers/MotocycleController';
+import MotorcycleController from '../Controllers/MotorcycleController';
 
 const routes = Router();
 
@@ -26,7 +26,7 @@ routes.put(
 
 routes.post(
   '/motocycles',
-  (req, res, next) => new MotocycleController(req, res, next).create(),
+  (req, res, next) => new MotorcycleController(req, res, next).create(),
 );
 
 export default routes;

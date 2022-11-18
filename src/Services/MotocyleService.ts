@@ -1,6 +1,6 @@
-import Motocycle from '../Domains/Motocycle';
-import IMotocyle from '../Interfaces/IMotocycle';
-import MotocycleODM from '../Models/MotocycleODM';
+import Motocycle from '../Domains/Motorcycle';
+import IMotocyle from '../Interfaces/IMotorcycle';
+import MotocycleODM from '../Models/MotorcycleODM';
 
 class MotocycleService {
   private createMotocycleDomain(motocycle: IMotocyle | null): Motocycle | null {

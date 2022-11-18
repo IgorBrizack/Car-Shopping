@@ -39,19 +39,19 @@ class CarsController {
     return this.res.status(200).json(allCars);
   }
 
-  public async getCarById(id: string) {
+  public async getCarById() {
     try {
-      await this.service.idVerify(id);
-      const car = await this.service.getCarId(id);
+      await this.service.idVerify(this.req.params.id);
+      const car = await this.service.getCarId(this.req.params.id);
       return this.res.status(200).json(car);
     } catch (error) {
       this.next(error);
     }
   }
   
-  public async updateCarById(id: string, data: ICar) {
+  public async updateCarById() {
     try {
-      const carUpdated = await this.service.updateCar(id, data);
+      const carUpdated = await this.service.updateCar(this.req.params.id, this.req.body);
       return this.res.status(200).json(carUpdated);
     } catch (error) {
       this.next(error);

@@ -16,12 +16,12 @@ routes.get(
 
 routes.get(
   '/cars/:id',
-  (req, res, next) => new CarsController(req, res, next).getCarById(req.params.id),
+  (req, res, next) => new CarsController(req, res, next).getCarById(),
 );
 
 routes.put(
   '/cars/:id',
-  (req, res, next) => new CarsController(req, res, next).updateCarById(req.params.id, req.body),
+  (req, res, next) => new CarsController(req, res, next).updateCarById(),
 );
 
 routes.post(

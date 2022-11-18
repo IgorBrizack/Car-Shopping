@@ -135,7 +135,7 @@ describe('Testando a rota de Motorcycles', () => {
 
     const service = new MotorcycleService();
     const result = await service.updateMotorcycle(id, motorcycleUpdate);
-
+    //
     expect(result).to.be.deep.equal(motorcycleUpdated);
   });
 

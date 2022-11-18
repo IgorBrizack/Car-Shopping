@@ -28,7 +28,7 @@ class CarsService {
 
   public async getCarId(id: string) {
     const carODM = new CarODM();
-    const result = await carODM.getCar(id);
+    const result = await carODM.getById(id);
     
     if (!result) throw new ErrorWithStatus('Car not found', 404);
 

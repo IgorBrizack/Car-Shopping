@@ -26,7 +26,7 @@ class MotorcycleService {
 
   public async getMotorcycleId(id: string) {
     const motorcycleODM = new MotorcycleODM();
-    const result = await motorcycleODM.getMotorcycle(id);
+    const result = await motorcycleODM.getById(id);
     
     if (!result) throw new ErrorWithStatus('Motorcycle not found', 404);
 

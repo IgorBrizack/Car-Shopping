@@ -15,10 +15,6 @@ class MotorcycleODM extends AbstractODM<IMotorcycle> {
     });
     super(schema, 'Motorcycle');
   }
-
-  public async getMotorcycle(id: string): Promise<IMotorcycle | null> {
-    return this.model.findById(id);
-  }
 }
 
 export default MotorcycleODM;

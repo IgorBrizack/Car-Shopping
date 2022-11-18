@@ -38,8 +38,16 @@ class CarsService {
   public async idVerify(id: string) {
     const carODM = new CarODM();
     const isValid = await carODM.isValidId(id);
-    
+
     if (!isValid) throw new ErrorWithStatus('Invalid mongo id', 422);
+  }
+
+  public async updateCar(id: string, data: ICar) {
+    await this.idVerify(id);
+    await this.getCarId(id);
+    const carODM = new CarODM();
+    const result = await carODM.update(id, data);
+    return this.createCarDomain(result);
   }
 }
 

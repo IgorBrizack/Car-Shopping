@@ -1,10 +1,31 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# Seja Bem vindo ao Car-Shopping
+
+Aqui você irá encontrar uma API RestFul com MongoDB, TypeScript e Mongoose.
+
+<details>
+<summary><strong> ⚠️ Configurações mínimas para execução do projeto</strong></summary><br />
+ 
+ Na sua máquina deve ter:
+  - Sistema Operacional Distribuição Unix
+  - Node
+  - Docker
+  - Docker-compose
+  - Devem ser setadas as váriaveis de ambiente no .env da sua aplicação
+ 
+ Clone o repositório e rode na sua máquina:
+
+```
+git@github.com:IgorBrizack/Car-Shopping.git
+acesse o diretório...
+
+instale as dependências...
+npm install
+
+subindo os containers...
+docker-compose up -d
+
+inicie a aplicação...
+npm run dev
+```
+ 
+ </details>
